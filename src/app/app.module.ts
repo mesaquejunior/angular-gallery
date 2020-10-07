@@ -5,14 +5,9 @@ import { AppComponent } from './app.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    GaleriaComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, GaleriaComponent],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
