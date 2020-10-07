@@ -1,0 +1,17 @@
+<div class="gallery" *ngIf="pictures.length >= 1">
+<span class="material-icons title">perm_media</span>
+<span class="title"> {{title}}</span>
+<div class="picture"><img src="{{ pictures[currentPicture] }}" alt="{{subtitles[currentPicture]}}" /></div>
+<p>{{subtitles[currentPicture]}}</p>
+<button (click)='firstPicure()' class="material-icons gallery-button" [disabled]="currentPicture === 0" [class.gallery-button-disabled]="currentPicture === 0">first_page</button>
+<button (click)='previosPicture()' class="material-icons gallery-button" [disabled]="currentPicture === 0" [class.gallery-button-disabled]="currentPicture === 0">chevron_left</button>
+<button (click)='nextPicture()' class="material-icons gallery-button" [disabled]="isLastPicture()" [class.gallery-button-disabled]="isLastPicture()">chevron_right</button>
+<button (click)='lastPicture()' class="material-icons gallery-button" [disabled]="isLastPicture()" [class.gallery-button-disabled]="isLastPicture()">last_page</button>
+<p>Foto {{currentPicture + 1}} de {{pictures.length}}</p>
+</div>
+<div class="gallery" *ngIf="pictures.length ==0">
+<span class="material-icons title">perm_media</span>
+<span class="title"> {{title}}</span>
+<p>¯\_(ツ)_/¯</p>
+<p>Você não tem nenhuma foto nesta galeria ainda!</p>
+</div>

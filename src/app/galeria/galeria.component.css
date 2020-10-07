@@ -1,0 +1,29 @@
+.gallery {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.gallery img {
+  max-height: 500px;
+}
+
+.gallery-button {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  background-color: darkblue;
+  border-radius: 0;
+  margin: 0 2px 0 2px;
+  outline: none;
+}
+
+.gallery-button-disabled {
+  background-color: #e0f4f7;
+}
+
+
+.title {
+  font-size: 2.5rem;
+  padding-bottom: 20px;
+}
