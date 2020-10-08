@@ -1,48 +1,52 @@
-<div class="gallery" *ngIf="pictures.length >= 1">
-  <span class="material-icons title">perm_media</span>
-  <span class="title"> {{ title }}</span>
-  <div class="picture">
-    <img
-      src="{{ pictures[currentPicture] }}"
-      alt="{{ subtitles[currentPicture] }}"
-    />
+<div class="gallery" *ngIf="pictures.length">
+  <div class="title">
+    <span class="material-icons title">perm_media</span>
+    <span class="title"> {{ title }}</span>
   </div>
-  <p>{{ subtitles[currentPicture] }}</p>
-  <button
-    (click)="firstPicure()"
-    class="material-icons gallery-button"
-    [disabled]="currentPicture === 0"
-    [class.gallery-button-disabled]="currentPicture === 0"
-  >
-    first_page
-  </button>
-  <button
-    (click)="previosPicture()"
-    class="material-icons gallery-button"
-    [disabled]="currentPicture === 0"
-    [class.gallery-button-disabled]="currentPicture === 0"
-  >
-    chevron_left
-  </button>
-  <button
-    (click)="nextPicture()"
-    class="material-icons gallery-button"
-    [disabled]="isLastPicture()"
-    [class.gallery-button-disabled]="isLastPicture()"
-  >
-    chevron_right
-  </button>
-  <button
-    (click)="lastPicture()"
-    class="material-icons gallery-button"
-    [disabled]="isLastPicture()"
-    [class.gallery-button-disabled]="isLastPicture()"
-  >
-    last_page
-  </button>
-  <p>Foto {{ currentPicture + 1 }} de {{ pictures.length }}</p>
+  <div class="pictures">
+    <ng-container *ngFor="let picture of pictures; let i = index">
+      <img [src]="picture" [style.opacity]="i === currentPicture ? 1 : 0" />
+    </ng-container>
+  </div>
+  <div class="buttons">
+    <p>{{ subtitles[currentPicture] }}</p>
+    <button
+      (click)="firstPicure()"
+      class="material-icons gallery-button"
+      [disabled]="currentPicture === 0"
+      [class.gallery-button-disabled]="currentPicture === 0"
+    >
+      first_page
+    </button>
+    <button
+      (click)="previosPicture()"
+      class="material-icons gallery-button"
+      [disabled]="currentPicture === 0"
+      [class.gallery-button-disabled]="currentPicture === 0"
+    >
+      chevron_left
+    </button>
+    <button
+      (click)="nextPicture()"
+      class="material-icons gallery-button"
+      [disabled]="isLastPicture()"
+      [class.gallery-button-disabled]="isLastPicture()"
+    >
+      chevron_right
+    </button>
+    <button
+      (click)="lastPicture()"
+      class="material-icons gallery-button"
+      [disabled]="isLastPicture()"
+      [class.gallery-button-disabled]="isLastPicture()"
+    >
+      last_page
+    </button>
+    <p>Foto {{ currentPicture + 1 }} de {{ pictures.length }}</p>
+  </div>
 </div>
-<div class="gallery" *ngIf="pictures.length == 0">
+
+<div class="gallery" *ngIf="!pictures.length">
   <span class="material-icons title">perm_media</span>
   <span class="title"> {{ title }}</span>
   <p>¯\_(ツ)_/¯</p>

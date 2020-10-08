@@ -1,10 +1,21 @@
 .gallery {
-  margin-bottom: 50px;
   text-align: center;
 }
 
-.gallery img {
+.pictures {
+  align-content: center;
+  position: relative;
+  height: 500px;
+}
+
+.pictures img {
   max-height: 500px;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: opacity 1000ms;
+  position: absolute;
 }
 
 .gallery-button {
